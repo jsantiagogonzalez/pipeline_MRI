@@ -9,5 +9,4 @@ This repo perfoms:
 - Brain extraction
 - Bias field correction
 
-We are currently working on reading dicom headers before converting the archive into .nii.
-This way even coronal images will work.
+We are currently working on reading dicom headers before converting the archive into .nii to make coronal images work.
