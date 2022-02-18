@@ -6,10 +6,10 @@ import shutil
 
 
 
-def image_registrator(nifti_not_proc_dir = '/home/ubuntu/Documents/TFG_SANTIAGO_GONZALEZ/backup'):
+def image_registrator(nifti_not_proc_dir = '/home/alumno/TFG_SANTIAGO_GONZALEZ/backup'):
 
 
-    nifti_registered_dir = '/home/ubuntu/Documents/TFG_SANTIAGO_GONZALEZ/backup_registered'
+    nifti_registered_dir = '/home/alumno/TFG_SANTIAGO_GONZALEZ/backup_registered'
     dirs = os.listdir(nifti_not_proc_dir)
     for fichier in dirs:
         os.chdir(nifti_not_proc_dir + "/" + fichier)
@@ -28,7 +28,7 @@ def image_registrator(nifti_not_proc_dir = '/home/ubuntu/Documents/TFG_SANTIAGO_
     regIterations = ( 100, 75, 20, 0 ),
     verbose = True, outprefix = outputPrefix )
 
-    ants.image_write( registrationNoMask['warpedmovout'], outputPrefix + "axT1.nii.gz" )
+    ants.image_write( registrationNoMask['warpedmovout'], outputPrefix + "FLAIR.nii.gz" )
     jacobian = ants.create_jacobian_determinant_image( fixedImage, registrationNoMask['fwdtransforms'][0] )
 
     source = os.path.join( nifti_not_proc_dir, n.__str__(), 'OutputNoMaskANTsPy' )
